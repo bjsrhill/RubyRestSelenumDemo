@@ -10,8 +10,11 @@ Things you may want to cover:
 
 * System dependencies
 cucumber
+
 rest-client
+
 rspec
+
 selenium-webdriver
 
 * Configuration
@@ -19,8 +22,11 @@ cucumber.yml
 
 * How to run the test suite
 rake cucumber_web
+
 This runs the Selenium web tag index-menusSelenium
+
 rake cucumber_rest
+
 This runs the Rest tag index-menusRest
 
 * Deployment instructions
