@@ -1,0 +1,13 @@
+node {
+   stage('Preparation') {
+      git 'https://github.com/bjsrhill/RubyRestSelenumDemo.git'
+      mvnHome = tool 'M3'
+   }
+   stage('Test') {
+      sh "rake cucumber_web"
+   }
+   stage('Results') {
+      cucumber fileIncludePattern: '**/*.json', sortingMethod: 'ALPHABETICAL'
+      archive 'target/*.jar'
+   }
+}

@@ -6,28 +6,28 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-2.6.0
+    2.6.0
 
 * System dependencies
-cucumber
+    cucumber
 
-rest-client
+    rest-client
 
-rspec
+    rspec
 
-selenium-webdriver
+    selenium-webdriver
 
 * Configuration
-cucumber.yml
+    cucumber.yml
 
 * How to run the test suite
-rake cucumber_web
+    rake cucumber_web
 
-This runs the Selenium web tag index-menusSelenium
+    This runs the Selenium web tag index-menusSelenium
 
-rake cucumber_rest
+    rake cucumber_rest
 
-This runs the Rest tag index-menusRest
+    This runs the Rest tag index-menusRest
 
 * Deployment instructions
 
