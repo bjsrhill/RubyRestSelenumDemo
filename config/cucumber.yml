@@ -1,0 +1,4 @@
+default: --tags ~@wip --require features
+wip: --tags @wip --require features
+web: --tags @index-menusSelenium
+rest: --tags @index-menusRest
