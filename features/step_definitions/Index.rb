@@ -25,13 +25,10 @@ Given("the home page displays") do
 end
 
 Then(/^menu items are found$/) do
-  expect(JSON.parse(@response)).to include(@utils.properties["indexMenus"]["Beverly S. Hill"] && @utils.properties["indexMenus"]["Professional Experience"] && @utils.properties["indexMenus"]["Other Experience"] && @utils.properties["indexMenus"]["Technical Skills"] && @utils.properties["indexMenus"]["Training"] && @utils.properties["indexMenus"]["Education"])
+  expect(JSON.parse(@response)).to include(@utils.getExpectedIndexMenus)
 end
 
 Then("menu items are visible") do
-  @menus = @utils.driver.find_element(:xpath, @utils.properties["allIndexMenus"]).text
-  expect(@menus).to include(@utils.properties["indexMenus"]["Beverly S. Hill"] && @utils.properties["indexMenus"]["Professional Experience"] && @utils.properties["indexMenus"]["Other Experience"] && @utils.properties["indexMenus"]["Technical Skills"] && @utils.properties["indexMenus"]["Training"] && @utils.properties["indexMenus"]["Education"])
+  @menus = @utils.getLocateIndexMenus
+  expect(@menus).to include(@utils.getExpectedIndexMenus)
 end
-
-
-

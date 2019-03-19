@@ -33,4 +33,14 @@ class StepsUtils
       @element if @element.displayed?
     }
   end
+
+  def getLocateIndexMenus
+    @driver.find_element(:xpath, @properties["allIndexMenus"]).text
+  end
+
+  def getExpectedIndexMenus
+
+    @properties["indexMenus"]["Beverly S. Hill"] && @properties["indexMenus"]["Professional Experience"] && @properties["indexMenus"]["Other Experience"] && @properties["indexMenus"]["Technical Skills"] && @properties["indexMenus"]["Training"] && @properties["indexMenus"]["Education"]
+  end
+
 end
