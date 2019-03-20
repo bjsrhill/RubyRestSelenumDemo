@@ -20,27 +20,4 @@ class StepsUtils
       @properties
     end
   end
-
-  def get_index_page
-    @url = properties["indexUrl"]
-    chromedriver_path = File.join(File.absolute_path('', File.dirname("chromedriver")), "features", "chromedriver")
-    Selenium::WebDriver::Chrome.driver_path = chromedriver_path
-    wait = Selenium::WebDriver::Wait.new(:timeout => 15)
-    @driver = Selenium::WebDriver.for :chrome
-    @driver.navigate.to @url
-    form = wait.until {
-      @element = @driver.find_element(:xpath, properties["allIndexMenus"])
-      @element if @element.displayed?
-    }
-  end
-
-  def getLocateIndexMenus
-    @driver.find_element(:xpath, @properties["allIndexMenus"]).text
-  end
-
-  def getExpectedIndexMenus
-
-    @properties["indexMenus"]["Beverly S. Hill"] && @properties["indexMenus"]["Professional Experience"] && @properties["indexMenus"]["Other Experience"] && @properties["indexMenus"]["Technical Skills"] && @properties["indexMenus"]["Training"] && @properties["indexMenus"]["Education"]
-  end
-
 end

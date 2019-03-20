@@ -1,11 +1,13 @@
 require 'rest-client'
 require 'rspec'
 require_relative 'steps_utils'
+require_relative '../page_objects/index_page_object'
 require 'selenium-webdriver'
 
 Before do
   @utils = StepsUtils.new
   @utils.load_properties("/values.properties")
+  @indexPageObject = IndexPageObject.new
 end
 
 After do
@@ -21,14 +23,14 @@ Given(/^the page displays$/) do
 end
 
 Given("the home page displays") do
-  @utils.get_index_page
+  @indexPageObject.get_index_page
 end
 
 Then(/^menu items are found$/) do
-  expect(JSON.parse(@response)).to include(@utils.getExpectedIndexMenus)
+  expect(JSON.parse(@response)).to include(@indexPageObject.getExpectedIndexMenus)
 end
 
 Then("menu items are visible") do
-  @menus = @utils.getLocateIndexMenus
-  expect(@menus).to include(@utils.getExpectedIndexMenus)
+  @menus = @indexPageObject.getLocateIndexMenus
+  expect(@menus).to include(@indexPageObject.getExpectedIndexMenus)
 end
