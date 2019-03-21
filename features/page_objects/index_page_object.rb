@@ -4,11 +4,17 @@ class IndexPageObject
 
   attr_accessor :driver
   attr_accessor :properties
+  attr_accessor :url
+  attr_accessor :restUrl
 
-  def get_index_page
+  def get_properties
     @utils = StepsUtils.new
     @stepsProperties = @utils.load_properties("/values.properties")
     @url = @stepsProperties["indexUrl"]
+    @restUrl = @stepsProperties["url"]
+  end
+
+  def get_index_page
     chromedriver_path = File.join(File.absolute_path('', File.dirname("chromedriver")), "features/page_objects", "chromedriver")
     Selenium::WebDriver::Chrome.driver_path = chromedriver_path
     wait = Selenium::WebDriver::Wait.new(:timeout => 15)

@@ -5,19 +5,18 @@ require_relative '../page_objects/index_page_object'
 require 'selenium-webdriver'
 
 Before do
-  @utils = StepsUtils.new
-  @utils.load_properties("/values.properties")
   @indexPageObject = IndexPageObject.new
+  @indexPageObject.get_properties
 end
 
 After do
-  if @url == @utils.properties["indexUrl"]
+  if @url == @indexPageObject.url
     @driver.quit
   end
 end
 
 Given(/^the page displays$/) do
-  url = @utils.properties["url"]
+  url = @indexPageObject.restUrl
   @response = RestClient.get(url)
   puts @response.body
 end

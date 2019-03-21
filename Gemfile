@@ -40,7 +40,7 @@ end
 
 group :test do
   gem 'cucumber-rails', require: false
-  # database_cleaner is not mandatory, but highly recommended
+  gem 'rspec','~> 3.8.0'
   gem 'database_cleaner'
 end
 
@@ -49,7 +49,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'cucumber'
   gem 'rest-client'
-  gem 'rspec','~> 3.8.0'
   gem 'selenium-webdriver'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
