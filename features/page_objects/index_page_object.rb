@@ -8,7 +8,6 @@ class IndexPageObject
   def get_index_page
     @utils = StepsUtils.new
     @stepsProperties = @utils.load_properties("/values.properties")
-    puts @stepsProperties["indexUrl"]
     @url = @stepsProperties["indexUrl"]
     chromedriver_path = File.join(File.absolute_path('', File.dirname("chromedriver")), "features/page_objects", "chromedriver")
     Selenium::WebDriver::Chrome.driver_path = chromedriver_path
