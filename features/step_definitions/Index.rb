@@ -1,5 +1,4 @@
 require 'rest-client'
-require 'rspec'
 require_relative 'steps_utils'
 require_relative '../page_objects/index_page_object'
 require 'selenium-webdriver'

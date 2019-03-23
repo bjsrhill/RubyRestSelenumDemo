@@ -234,6 +234,7 @@ DEPENDENCIES
   database_cleaner
   jbuilder (~> 2.0)
   jquery-rails
+  json
   rails (= 4.2.11.1)
   rest-client
   rspec (~> 3.8.0)
