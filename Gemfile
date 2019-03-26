@@ -40,12 +40,11 @@ end
 
 group :test do
   gem 'cucumber-rails', require: false
-  gem 'rspec','~> 3.8.0'
-  gem 'database_cleaner'
   gem 'cucumber'
   gem 'rest-client'
   gem 'selenium-webdriver'
   gem 'json'
+  gem 'rspec-expectations'
 end
 
 group :development do
