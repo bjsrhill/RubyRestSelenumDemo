@@ -15,9 +15,7 @@ After do
 end
 
 Given(/^the page displays$/) do
-  url = @indexPageObject.restUrl
-  @response = RestClient.get(url)
-  puts @response.body
+  @indexPageObject.getIndexPageRest
 end
 
 Given("the home page displays") do
@@ -25,7 +23,7 @@ Given("the home page displays") do
 end
 
 Then(/^menu items are found$/) do
-  expect(JSON.parse(@response)).to include(@indexPageObject.getExpectedIndexMenus)
+  expect(JSON.parse(@indexPageObject.response)).to include(@indexPageObject.getExpectedIndexMenus)
 end
 
 Then("menu items are visible") do

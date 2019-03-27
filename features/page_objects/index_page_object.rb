@@ -2,10 +2,11 @@ class IndexPageObject
 
   require_relative '../step_definitions/steps_utils'
 
-  attr_accessor :driver
-  attr_accessor :properties
-  attr_accessor :url
-  attr_accessor :restUrl
+  attr_reader :driver
+  attr_reader :properties
+  attr_reader :url
+  attr_reader :restUrl
+  attr_reader :response
 
   def get_properties
     @utils = StepsUtils.new
@@ -24,6 +25,10 @@ class IndexPageObject
       @element = @driver.find_element(:xpath, @stepsProperties["allIndexMenus"])
       @element if @element.displayed?
     }
+  end
+
+  def getIndexPageRest
+    @response = RestClient.get(restUrl)
   end
 
   def getLocateIndexMenus
